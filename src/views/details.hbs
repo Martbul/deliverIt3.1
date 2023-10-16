@@ -1,0 +1,11 @@
+<main>
+   <h1>{{order.name}}</h1>
+   <img class="cube" src="{{order.order}}" />
+   <div class="details">
+      <p><span>Description:</span> {{order.dayForDelivery}}</p>
+      <p><span>Difficulty level:</span> {{order.difficultyLevel}}</p>
+      <a class="btn" href="/orders">Back</a>
+      <a class="btn" href="/cubes/{{order._id}}/attach-accessory">Attach Accessory</a>
+   </div>
+
+</main>
