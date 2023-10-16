@@ -44,11 +44,8 @@
 
           {{#if isAuthenticated}}
           <li class="nav-item"><a href="/beADeliver" class="nav-link">BecomeAdeliver</a></li>
-          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-          {{#if isDeliver}}
           <li class="nav-item"><a href="/binds" class="nav-link">Binds</a></li>
-
-          {{/if}}
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/users/logout" class="nav-link">Logout</a></li>
           <li class="nav-item"><a href="/profile" class="nav-link">Welcome, {{user.email}}</a></li>
 
