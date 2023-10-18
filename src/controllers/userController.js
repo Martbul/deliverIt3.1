@@ -39,6 +39,15 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get('/profile', async(req, res) => {
+  const user = req.user
+  //console.log(user);
+
+  const myProfile = await userService.getMyProfile(user._id).lean()
+  console.log(myProfile);
+  res.render('profile',{ myProfile})
+})
+
 router.get("/logout", (req, res) => {
   res.clearCookie("auth");
   res.clearCookie("authDeliver");

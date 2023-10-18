@@ -26,3 +26,12 @@ console.log({token});
 
     
 }
+
+
+
+exports.isAuth = (req, res, next) => {
+    if (!req.user) {
+       return res.redirect('/users/login')
+    }
+    next();
+ };

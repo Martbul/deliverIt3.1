@@ -1,12 +1,14 @@
 const router = require("express").Router();
 const orderService = require("../services/orderService");
+const {isAuth} = require('./../middlewares/authMiddleware');
+
 
 router.get("/", (req, res) => {
   res.render("index");
 });
 
 
-router.get("/beADeliver", (req, res) => {
+router.get("/beADeliver",isAuth, (req, res) => {
   res.render("beADeliver");
 });
 
@@ -14,7 +16,7 @@ router.get("/learnMore", (req, res) => {
   res.render("learnMore");
 });
 
-router.get("/binds", async (req, res) => {
+router.get("/binds", isAuth,async (req, res) => {
   const { search, from, to } = req.query;
   const orders = await orderService.getAll(search, from, to);
 

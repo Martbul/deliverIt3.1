@@ -9,7 +9,7 @@ router.get("/create", (req, res) => {
 router.post("/create", async (req, res) => {
   const { fullname, order, address, dayForDelivery, timeForDelivery } =
     req.body;
-  console.log(req.body);
+ // console.log(req.body);
 
   await orderService.create({
     fullname,
