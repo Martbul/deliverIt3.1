@@ -6,7 +6,7 @@ exports.create = async (orderData) => {
    return order
 }
 
-exports.getAll = async (search, from, to) => {
+exports.getAll = async (search) => {
   let filterOrders = await Order.find().lean();
 
 // TODO: this will be filtered later with mongoose
@@ -16,18 +16,6 @@ exports.getAll = async (search, from, to) => {
     );
   }
 
-  if (from) {
-    filterOrders = filterOrders.filter(
-      (order) => order.difficultyLevel >= Number(from)
-    );
-  }
-
-  if (to) {
-    
-    filterOrders = filterOrders.filter(
-      (order) => order.difficultyLevel <= Number(to)
-    );
-  }
 
   return filterOrders;
 };
